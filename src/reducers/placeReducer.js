@@ -11,8 +11,13 @@ export default function placeReducer(places, action) {
         {
           country: action.country,
           id: action.id,
+          time: action.time
         },
       ];
+    }
+
+    case "deleted": {
+      return places.filter((p) => { return p.id != action.id })
     }
 
     default: {
