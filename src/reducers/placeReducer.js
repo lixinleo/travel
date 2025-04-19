@@ -17,7 +17,7 @@ export default function placeReducer(places, action) {
     }
 
     case "deleted": {
-      return places.filter((p) => { return p.id != action.id })
+      return places.filter((p) => { return p.id !== action.id })
     }
 
     default: {
