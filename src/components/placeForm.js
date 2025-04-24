@@ -35,9 +35,20 @@ const PlaceForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col-sm">
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        width: "200px",
+        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "50vh",
+      }}
+    >
+      <div className="row" >
+        <div className="col-sm" >
           <Select
             options={options}
             value={country}
@@ -48,12 +59,20 @@ const PlaceForm = () => {
           />
         </div>
       </div>
-      <div className="row">
-        <DatePicker selected={startDate} showYearDropdown onChange={(date) => setStartDate(date)} />
+      <div className="row" style={{ marginTop: "10px" }}>
+        <DatePicker
+          selected={startDate}
+          showYearDropdown
+          onChange={(date) => setStartDate(date)}
+        />
       </div>
-      <div className="row">
+      <div className="row" style={{ marginTop: "10px" }}>
         <div className="col-small">
-          <input className="btn btn-primary" type="submit" value="add country" />
+          <input
+            className="btn btn-primary"
+            type="submit"
+            value="add country"
+          />
         </div>
       </div>
     </form>
